@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package streaming.test;
+package forum.test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import streaming.spring.SpringConfig;
+import forum.spring.SpringConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;

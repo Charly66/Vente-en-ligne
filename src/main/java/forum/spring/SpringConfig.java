@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package streaming.spring;
+package forum.spring;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -35,7 +35,7 @@ public class SpringConfig {
     
     @Bean
     public EntityManagerFactory entityManagerFactory(){
-        return Persistence.createEntityManagerFactory("streaming_PU");
+        return Persistence.createEntityManagerFactory("ForumPU");
     }
     
 }
