@@ -22,8 +22,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages="streaming")
-@EnableJpaRepositories(basePackages = "streaming")
+@ComponentScan(basePackages="forum")
+@EnableJpaRepositories(basePackages = "forum")
 public class SpringConfig {
     
     @Bean
