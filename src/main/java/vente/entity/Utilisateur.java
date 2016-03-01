@@ -7,6 +7,7 @@ package vente.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,10 +26,15 @@ public class Utilisateur implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Column(length = 64,unique = true)
     private String email;
+    @Column(length = 32)
     private String mdp;
+    @Column(length = 32)
     private String nom;
+    @Column(length = 32)
     private String prenom;
+    @Column(length = 64)
     private String adresse;
     private Long codePostal;
     

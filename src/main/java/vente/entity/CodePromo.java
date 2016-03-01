@@ -5,6 +5,7 @@
  */
 package vente.entity;
 
+import entity.enumeration.TypeCodePromo;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,15 +24,15 @@ public class CodePromo implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private int code;
-    private enum TypeCodePromo{};
+    private String code;
+    private TypeCodePromo typeCodePromo;
     private int valeur;
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -44,7 +45,7 @@ public class CodePromo implements Serializable {
     }
     
 
-    public CodePromo(int code, int valeur) {
+    public CodePromo(String code, int valeur) {
         this.code = code;
         this.valeur = valeur;
     }

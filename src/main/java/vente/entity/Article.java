@@ -7,12 +7,12 @@ package vente.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -28,6 +28,7 @@ public class Article implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Column(length = 128)
     private String nom;
     private String ref;
     
@@ -38,9 +39,8 @@ public class Article implements Serializable {
     @OneToMany(mappedBy = "article")
     private List<SousCommande> sousCommandes;
 
-    public Article(String nom, Long stock, Long prix) {
+    public Article(String nom, Long prix) {
         this.nom = nom;
-        this.stock = stock;
         this.prix = prix;
     }
     private Long stock;
