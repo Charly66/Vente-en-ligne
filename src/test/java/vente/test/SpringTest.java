@@ -68,7 +68,4 @@ public class SpringTest {
         
         System.out.println("Init ok");
     }
-  
-    
-    
 }
