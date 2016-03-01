@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forum.spring;
+package vente.spring;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -22,8 +22,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages="forum")
-@EnableJpaRepositories(basePackages = "forum")
+@ComponentScan(basePackages="vente")
+@EnableJpaRepositories(basePackages = "vente")
 public class SpringConfig {
     
     @Bean
@@ -35,7 +35,7 @@ public class SpringConfig {
     
     @Bean
     public EntityManagerFactory entityManagerFactory(){
-        return Persistence.createEntityManagerFactory("ForumPU");
+        return Persistence.createEntityManagerFactory("PU");
     }
     
 }

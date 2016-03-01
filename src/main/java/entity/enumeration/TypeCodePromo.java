@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forum.service;
+package entity.enumeration;
 
 /**
  *
- * @author ajc
+ * @author admin
  */
-public interface SecurityServiceInterface {
-    public void check();
+public enum TypeCodePromo {
+    POURCENTAGE,
+    REMISE;
 }
