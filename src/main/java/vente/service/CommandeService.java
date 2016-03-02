@@ -5,6 +5,8 @@
  */
 package vente.service;
 
+import entity.enumeration.TypeEtatCommande;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import vente.entity.Commande;
 
@@ -14,4 +16,5 @@ import vente.entity.Commande;
  */
 public interface CommandeService extends CrudRepository<Commande, Long>{
     
+    public List<Commande> findByTypeEtatCommande(TypeEtatCommande etatCommande);
 }

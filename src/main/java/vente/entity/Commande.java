@@ -5,6 +5,7 @@
  */
 package vente.entity;
 
+import entity.enumeration.TypeEtatCommande;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -33,7 +34,8 @@ public class Commande implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateCommande;
     private Long prixTotal;
-    private Boolean paye;
+    
+    private TypeEtatCommande etatCommande;
     
     @ManyToOne
     @JoinColumn(name = "MODELIVRAISON_ID")
@@ -46,10 +48,10 @@ public class Commande implements Serializable {
     @OneToMany(mappedBy = "commande")
     private List<SousCommande> sousCommandes;
 
-    public Commande(Date dateCommande, Long prixTotal, Boolean paye) {
+    public Commande(Date dateCommande, Long prixTotal, TypeEtatCommande etatCommande) {
         this.dateCommande = dateCommande;
         this.prixTotal = prixTotal;
-        this.paye = paye;
+        this.etatCommande = etatCommande;
     }
 
     public Commande() {
@@ -104,13 +106,7 @@ public class Commande implements Serializable {
         this.prixTotal = prixTotal;
     }
 
-    public Boolean getPaye() {
-        return paye;
-    }
-
-    public void setPaye(Boolean paye) {
-        this.paye = paye;
-    }
+ 
 
     public ModeLivraison getModeLivraison() {
         return modeLivraison;
@@ -135,5 +131,14 @@ public class Commande implements Serializable {
     public void setSousCommandes(List<SousCommande> sousCommandes) {
         this.sousCommandes = sousCommandes;
     }
+
+    public TypeEtatCommande getTypeEtatCommande() {
+        return etatCommande;
+    }
+
+    public void setTypeEtatCommande(TypeEtatCommande typeEtatCommande) {
+        this.etatCommande = typeEtatCommande;
+    }
+
     
 }
