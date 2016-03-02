@@ -48,10 +48,15 @@ public class Commande implements Serializable {
     @OneToMany(mappedBy = "commande")
     private List<SousCommande> sousCommandes;
 
-    public Commande(Date dateCommande, Long prixTotal, TypeEtatCommande etatCommande) {
+    public Commande(long id, Date dateCommande, Long prixTotal, TypeEtatCommande etatCommande) {
+        this.id = id;
         this.dateCommande = dateCommande;
         this.prixTotal = prixTotal;
         this.etatCommande = etatCommande;
+    }
+
+    public Commande(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
     }
 
     public Commande() {
@@ -136,8 +141,8 @@ public class Commande implements Serializable {
         return etatCommande;
     }
 
-    public void setTypeEtatCommande(TypeEtatCommande typeEtatCommande) {
-        this.etatCommande = typeEtatCommande;
+    public void setTypeEtatCommande(TypeEtatCommande etatCommande) {
+        this.etatCommande = etatCommande;
     }
 
     

@@ -32,6 +32,13 @@ public class CodePromo implements Serializable {
         return code;
     }
 
+    public CodePromo(long id, String code, TypeCodePromo typeCodePromo, int valeur) {
+        this.id = id;
+        this.code = code;
+        this.typeCodePromo = typeCodePromo;
+        this.valeur = valeur;
+    }
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -85,6 +92,14 @@ public class CodePromo implements Serializable {
     @Override
     public String toString() {
         return "vente.entity.CodePromo[ id=" + id + " ]";
+    }
+
+    public TypeCodePromo getTypeCodePromo() {
+        return typeCodePromo;
+    }
+
+    public void setTypeCodePromo(TypeCodePromo typeCodePromo) {
+        this.typeCodePromo = typeCodePromo;
     }
     
 }

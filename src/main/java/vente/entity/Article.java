@@ -6,6 +6,7 @@
 package vente.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -31,6 +34,12 @@ public class Article implements Serializable {
     @Column(length = 128)
     private String nom;
     private String ref;
+    private Long stock;
+    private Long nbVendus;
+    private Long prix;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreation;
     
     @ManyToOne
     @JoinColumn(name = "CATEGORIE_ID")
@@ -39,15 +48,32 @@ public class Article implements Serializable {
     @OneToMany(mappedBy = "article")
     private List<SousCommande> sousCommandes;
 
+    public Article(Long id, String nom, Long stock, Long prix) {
+        this.id = id;
+        this.nom = nom;
+        this.stock = stock;
+        this.prix = prix;
+    }
+
     public Article(String nom, Long prix) {
         this.nom = nom;
         this.prix = prix;
     }
-    private Long stock;
+
+    public Article(String nom, Date dateCreation, Long stock, Long prix) {
+        this.nom = nom;
+        this.dateCreation = dateCreation;
+        this.stock = stock;
+        this.prix = prix;
+    }
+    
+    
+    
+   
 
     public Article() {
     }
-    private Long prix;
+ 
 
     public Long getId() {
         return id;
@@ -128,6 +154,22 @@ public class Article implements Serializable {
 
     public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
+    }
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public Long getNbVendus() {
+        return nbVendus;
+    }
+
+    public void setNbVendus(Long nbVendus) {
+        this.nbVendus = nbVendus;
     }
     
 }

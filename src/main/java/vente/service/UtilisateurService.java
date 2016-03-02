@@ -15,6 +15,6 @@ import vente.entity.Utilisateur;
 public interface UtilisateurService extends CrudRepository<Utilisateur, Long>{
     
     
-    public Utilisateur findByEmail(String email);
+    public Utilisateur findOneByEmail(String email);
     
 }

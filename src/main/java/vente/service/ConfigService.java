@@ -5,10 +5,13 @@
  */
 package vente.service;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author admin
  */
+@Service
 public class ConfigService {
     
     private String titreMailInscription = "Inscription";
@@ -16,6 +19,9 @@ public class ConfigService {
     private String titreMailAuto = "Votre commande vous attend";
     private String contenuMailAuto  ="Venez depenser votre argent rapidement sinon vous allez rater votre vie !";
     private int joursAvantMailAuto = 3;
+
+    public ConfigService() {
+    }
 
     public ConfigService(String titreMailInscription, String contenuMailInscription, String titreMailAuto, String contenuMailAuto, int joursAvantMailAuto) {
         this.titreMailInscription = titreMailInscription;

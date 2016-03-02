@@ -16,5 +16,7 @@ import vente.entity.Commande;
  */
 public interface CommandeService extends CrudRepository<Commande, Long>{
     
-    public List<Commande> findByTypeEtatCommande(TypeEtatCommande etatCommande);
+    public List<Commande> findByEtatCommande(TypeEtatCommande etatCommande);
+    public Commande findOneByUtilisateurEmail(String nom);
+    
 }

@@ -14,4 +14,5 @@ import vente.entity.CodePromo;
  */
 public interface CodePromoService extends CrudRepository<CodePromo, Long>{
     
+    public CodePromo findOneByCode(String nom);
 }

@@ -28,7 +28,7 @@ public class UtilisateurServiceImpl {
     
 
     public void inscription(Utilisateur u) throws ExistingEmailException {
-        if (utilisateurService.findByEmail(u.getEmail()) != null) {
+        if (utilisateurService.findOneByEmail(u.getEmail()) != null) {
             throw new ExistingEmailException();
         }
 
@@ -38,7 +38,7 @@ public class UtilisateurServiceImpl {
     }
 
     public void login(String email, String mdp) throws WrongLoginException {
-        if (utilisateurService.findByEmail(email).getMdp() != mdp) {
+        if (utilisateurService.findOneByEmail(email).getMdp() != mdp) {
             throw new WrongLoginException();
         }
         System.out.println("Login successful");

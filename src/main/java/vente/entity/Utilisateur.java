@@ -41,7 +41,8 @@ public class Utilisateur implements Serializable {
     @OneToMany(mappedBy = "utilisateur")
     private List<Commande> commandes;
 
-    public Utilisateur(String email, String mdp, String nom, String prenom, String adresse, Long codePostal, String ville) {
+    public Utilisateur(long id, String email, String mdp, String nom, String prenom, String adresse, Long codePostal, String ville) {
+        this.id = id;
         this.email = email;
         this.mdp = mdp;
         this.nom = nom;

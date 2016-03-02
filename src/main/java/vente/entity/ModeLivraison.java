@@ -33,7 +33,8 @@ public class ModeLivraison implements Serializable {
     @OneToMany(mappedBy = "modeLivraison")
     private List<Commande> commandes;
 
-    public ModeLivraison(String nom, Long cout) {
+    public ModeLivraison(long id, String nom, Long cout) {
+        this.id = id;
         this.nom = nom;
         this.cout = cout;
     }

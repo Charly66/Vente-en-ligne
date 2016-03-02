@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vente.service;
+package vente.aspect;
 
-import org.springframework.data.repository.CrudRepository;
-import vente.entity.Article;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author admin
  */
-public interface ArticleService extends CrudRepository<Article, Long>{
+//@Aspect
+@Component
+public class LoggingAspect {
     
     
-    public Article findOneByNom(String nom);
 }
